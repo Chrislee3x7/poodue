@@ -7,7 +7,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export default function RatingPopup() {
+import Toilet from './images/toilet-icon.jpg'
+
+export default function RatingPopup({id}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -20,15 +22,14 @@ export default function RatingPopup() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open form dialog
-      </Button>
-      <Dialog open={open} onClose={handleClose}>
+        <Button class="toilet" id={id} onClick={handleClickOpen}>
+          <img src={Toilet} alt="toilet"/>
+        </Button>
+        <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Subscribe</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
+            This toilet icon is for: {id}!
           </DialogContentText>
           <TextField
             autoFocus
@@ -41,8 +42,8 @@ export default function RatingPopup() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button onClick={handleClose}>Subscribe</Button>
         </DialogActions>
       </Dialog>
     </div>
