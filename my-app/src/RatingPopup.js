@@ -19,6 +19,8 @@ export default function RatingPopup({id}) {
   const handleClose = () => {
     setOpen(false);
   };
+  
+  const buildingAbbreviation = id.toUpperCase();
 
   return (
     <div>
@@ -29,7 +31,7 @@ export default function RatingPopup({id}) {
         <DialogTitle>Subscribe</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            This toilet icon is for: {id}!
+            This toilet icon is for: {buildingAbbreviation}!
           </DialogContentText>
           <TextField
             autoFocus
