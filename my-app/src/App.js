@@ -1,4 +1,6 @@
 import campusMap from './images/campusMap.png'
+import React, { useState } from "react";
+import RatingPopup from './RatingPopup'
 import Toilet from './images/toilet-icon.jpg'
 
 import './App.css';
@@ -7,7 +9,12 @@ import styled from "styled-components";
 import { Button, IconButton } from "@mui/material";
 
 export default function App() {
-  
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const toggleRatingPopup = () => {
+    setIsOpen(!isOpen);
+    //alert("woo");
+  }
   return (
   
     <div class="container">
@@ -23,11 +30,11 @@ export default function App() {
         </Button>
 
 
-    </div>
+      <Button class="arms" onClick={toggleRatingPopup}>ARMS</Button>
     
+      <RatingPopup></RatingPopup>
+      
+    </div>
+
   );
-}
-function openRatingPage() {
-  //this is where we can have the button do stuff
-  alert("woo");
 }
