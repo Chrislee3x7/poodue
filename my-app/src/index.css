@@ -29,6 +29,8 @@ code {
 
 .container .toilet{
   position: absolute;
+  min-height: 23px;
+  min-width: 23px;
 
   border-image-width: 10vm;
   width: 2.5vw;

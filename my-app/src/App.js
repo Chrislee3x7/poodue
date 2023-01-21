@@ -11,10 +11,7 @@ import { Button, IconButton } from "@mui/material";
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
  
-  const toggleRatingPopup = () => {
-    setIsOpen(!isOpen);
-    //alert("woo");
-  }
+
   return (
   
     <div class="container">
@@ -22,20 +19,6 @@ export default function App() {
     
       <RatingPopup id="walc"></RatingPopup>
       <RatingPopup id="arms"></RatingPopup>
-        <Button class="toilet" id="arms" onClick={openRatingPage} style={{
-          minWidth: "25px",
-          minHeight: "25px"
-        }}>
-          <img
-          src={Toilet} alt="toilet"
-          />
-        </Button>
-
-
-      <Button class="arms" onClick={toggleRatingPopup}>ARMS</Button>
-    
-      <RatingPopup></RatingPopup>
-      
     </div>
 
   );
