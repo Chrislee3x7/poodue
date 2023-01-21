@@ -6,10 +6,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 import Toilet from './images/toilet-icon.jpg'
 
-export default function RatingPopup({id}) {
+export default function RatingPopup({id, averageRating = 3.6}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -24,28 +27,25 @@ export default function RatingPopup({id}) {
 
   return (
     <div>
-        <Button class="toilet" id={id} onClick={handleClickOpen}>
-          <img src={Toilet} alt="toilet"/>
-        </Button>
-        <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
+      <Button class="toilet" id={id} onClick={handleClickOpen}>
+        <img src={Toilet} alt="toilet"/>
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>
+          <Typography variant="h4" align="center">{buildingAbbreviation}</Typography>
+        </DialogTitle>
+        <Box sx={{display: 'flex', justifyContent: 'center'}}>
+          <Box sx={{ mr: 1 }}>{averageRating}</Box>
+          <Rating name="read-only" value={averageRating} precision={0.1} readOnly />
+        </Box>
         <DialogContent>
           <DialogContentText>
-            This toilet icon is for: {buildingAbbreviation}!
+            "Has slightly above average bathrooms."
           </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
         </DialogContent>
         <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Submit!</Button>
         </DialogActions>
       </Dialog>
     </div>
