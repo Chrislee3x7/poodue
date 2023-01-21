@@ -1,7 +1,6 @@
 import campusMap from './images/campusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
-
 import Toilet from './images/toilet-icon.jpg'
 
 import './App.css';
@@ -16,23 +15,26 @@ export default function App() {
     setIsOpen(!isOpen);
     //alert("woo");
   }
-
-  //--------------------------------------
-
-  //padding is size
-  //border-raduis is how curvy it is
-  //margin is how you set the position
-
-  //--------------------------------------
-
   return (
   
-    
     <div class="container">
       <img src={campusMap} alt="campus"/>
     
       <RatingPopup id="walc"></RatingPopup>
       <RatingPopup id="arms"></RatingPopup>
+        <Button class="toilet" id="arms" onClick={openRatingPage} style={{
+          minWidth: "25px",
+          minHeight: "25px"
+        }}>
+          <img
+          src={Toilet} alt="toilet"
+          />
+        </Button>
+
+
+      <Button class="arms" onClick={toggleRatingPopup}>ARMS</Button>
+    
+      <RatingPopup></RatingPopup>
       
     </div>
 
