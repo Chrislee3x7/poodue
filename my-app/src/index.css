@@ -27,20 +27,25 @@ code {
   height: auto;
 }
 
-.container .btn {
+.container .arms {
   position: absolute;
-  top: 20%;
-  left: 50%;
+
+  top: 5.7%;
+  left: 28%;
+  width: 10vw;
+  height: 2vw;
+
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   border: none;
   text-align: center;
-
-  background-color: #04ff00;
+  justify-content: center;
+  background-color: #CEB888;
   color: black;
-  font-size: 10px;
+  font-size: 1vw;
+  font-weight: bold;
   padding: 10px 10px;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
   opacity: 0.7;
 }

@@ -1,4 +1,4 @@
-import campusMap from './images/PurdueAcademicSide.png'
+import campusMap from './images/campusMap.png'
 
 import './App.css';
 // import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
@@ -19,7 +19,8 @@ export default function App() {
   
     <div class="container">
       <img src={campusMap} alt="campus"/>
-      <Button class="btn" onClick={openRatingPage}>pmu</Button>
+
+      <Button class="arms" onClick={openRatingPage}>ARMS</Button>
     </div>
     
   );
