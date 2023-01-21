@@ -1,9 +1,10 @@
 import campusMap from './images/campusMap.png'
+import Toilet from './images/toilet-icon.jpg'
 
 import './App.css';
 // import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 import styled from "styled-components";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 
 export default function App() {
 
@@ -17,10 +18,23 @@ export default function App() {
 
   return (
   
+    
     <div class="container">
       <img src={campusMap} alt="campus"/>
+    
+        <Button class="toilet" id="arms" onClick={openRatingPage}>
+          <img
+          src={Toilet} alt="toilet"
+          />
+        </Button>
 
-      <Button class="arms" onClick={openRatingPage}>ARMS</Button>
+        <Button class="toilet" id="walc" onClick={openRatingPage}>
+          <img
+          src={Toilet} alt="toilet"
+          />
+        </Button>
+
+
     </div>
     
   );
