@@ -40,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, boxShadow:3}}>
         <Search>
         <SearchIconWrapper>
             <SearchIcon />

@@ -53,10 +53,10 @@ export default function RatingPopup({id, averageRating = 3.6}) {
                 autoFocus
                 margin="dense"
                 id="name"
-                label="Add comment'"
+                label="Add comment"
                 type="text"
                 multiline
-                rows={3}
+                rows={1}
                 fullWidth
                 variant="standard"
             />
