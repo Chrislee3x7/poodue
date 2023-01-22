@@ -1,4 +1,5 @@
 import campusMap from './images/campusMap.png'
+import campusMap2 from './images/VectorStyleCampusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
 import { BottomNavigation, BottomNavigationAction } from "@mui/material"
