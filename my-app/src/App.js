@@ -15,6 +15,7 @@ export default function App() {
 
   return (
         <div class="container">
+          <div>
           <img src={campusMap} alt="campus"/>
 
           <RatingPopup id="frny"></RatingPopup>
@@ -63,6 +64,8 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
+          </div>
         </div>
+        
   );
 }
