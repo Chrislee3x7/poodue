@@ -2,11 +2,11 @@ import campusMap from './images/campusMap.png'
 import campusMap2 from './images/VectorStyleCampusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
-import Button from '@mui/material/Button'
 
 import './App.css';
-import styled from "styled-components";
-import { Box, BottomNavigation, BottomNavigationAction} from "@mui/material";
+import { MuiBottomNavigation } from './bottomNav.tsx';
+import VirtualizedList from './scroller.tsx';
+import { MultiSelectUnstyled } from '@mui/base';
 
 export default function App() {
   const [isZoomed, setIsZoomed] = useState(false);
@@ -16,10 +16,10 @@ export default function App() {
   };
 
   return (
-        <div class="container">
-          <div>
-          <img src={campusMap2} alt="campus"/>
-
+    <div>
+      <div class="container">
+          <img src={campusMap} alt="campus"/>
+          
           <RatingPopup id="frny"></RatingPopup>
           <RatingPopup id="pgnw"></RatingPopup>
           <RatingPopup id="wang"></RatingPopup>
@@ -38,7 +38,6 @@ export default function App() {
           <RatingPopup id="hamp"></RatingPopup>
           <RatingPopup id="walc"></RatingPopup>
           <RatingPopup id="arms"></RatingPopup>
-
           <RatingPopup id="ston"></RatingPopup>
           <RatingPopup id="univ"></RatingPopup>
           <RatingPopup id="schm"></RatingPopup>
@@ -66,8 +65,9 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
-          </div>
         </div>
-        
+        <VirtualizedList></VirtualizedList>
+        <MuiBottomNavigation></MuiBottomNavigation>
+    </div>
   );
 }

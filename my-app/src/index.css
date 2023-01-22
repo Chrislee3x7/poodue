@@ -45,6 +45,14 @@ code {
   opacity: 1;
 }
 
+#ratingList {
+  width: '100%'; 
+  height: '100%';
+  position: 'absolute'; 
+  top:0; 
+  background-color: 'background.paper';
+}
+
 #frny {
   top: 25%;
   left: 40%;
