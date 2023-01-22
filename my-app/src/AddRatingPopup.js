@@ -45,6 +45,7 @@ export default function RatingPopup({id}) {
           <Rating
             name="user-controlled-rating"
             value={value}
+            size='large'
             onChange={(event, newValue) => {
                 setValue(newValue);
             }}
@@ -62,7 +63,6 @@ export default function RatingPopup({id}) {
                 rows={1}
                 fullWidth
                 variant="standard"
-                value={value}
             />
           </DialogContentText>
         </DialogContent>
