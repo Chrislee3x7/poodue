@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import Toilet from './images/toilet-icon.jpg'
+import BuildingBathroomList from './BuildingBathroomList.js';
 
 export default function RatingPopup({id, averageRating = 3.6}) {
   const [open, setOpen] = React.useState(false);
@@ -29,6 +30,7 @@ export default function RatingPopup({id, averageRating = 3.6}) {
     <div>
       <Button class="toilet" id={id} onClick={handleClickOpen}>
         <img src={Toilet} alt="toilet"/>
+        <Typography variant="p" align="center" color="common.white">{averageRating}</Typography>
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
@@ -42,10 +44,10 @@ export default function RatingPopup({id, averageRating = 3.6}) {
           <DialogContentText>
             "Has slightly above average bathrooms."
           </DialogContentText>
+          <BuildingBathroomList></BuildingBathroomList>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Submit!</Button>
         </DialogActions>
       </Dialog>
     </div>
