@@ -57,7 +57,6 @@ export default function RatingPopup({id, averageRating = 3.6}) {
                 rows={1}
                 fullWidth
                 variant="standard"
-                value={value}
             />
           </DialogContentText>
         </DialogContent>

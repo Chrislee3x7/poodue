@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 export default function AlignItemsList() {
 
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://837b-128-210-107-129.ngrok.io/review/4");
+  xhr.open("GET", "https://8a48-128-210-107-129.ngrok.io/greeting");
   xhr.send();
   xhr.responseType = "json";
   xhr.onload = () => {
