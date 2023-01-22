@@ -1,4 +1,5 @@
 import campusMap from './images/campusMap.png'
+import campusMap2 from './images/VectorStyleCampusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
 import Button from '@mui/material/Button'
@@ -17,7 +18,7 @@ export default function App() {
   return (
         <div class="container">
           <div>
-          <img src={campusMap} alt="campus"/>
+          <img src={campusMap2} alt="campus"/>
 
           <RatingPopup id="frny"></RatingPopup>
           <RatingPopup id="pgnw"></RatingPopup>
