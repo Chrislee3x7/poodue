@@ -19,34 +19,22 @@ import avatar8 from './images/poopAvatar8.png';
 import avatar9 from './images/poopAvatar9.png';
 
 
-export default function BuildingBathroomList() {
+export default function RandomCommentsList() {
   
   const avatarArray = [avatar0, avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7, avatar8, avatar9];
-
-  // const randomizeAvatar = () => {
-  //     avatarArray[Math.random() * 9];
-  // };
 
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           {/* <Avatar alt="ADD TOILET NAME" src={avatarArray[Math.random() * 9]} /> */}
-          <Avatar alt="ADD TOILET NAME" src={avatarArray[Math.floor(Math.random() * 9)]} />
+          <Avatar alt="Random user 1" src={avatarArray[Math.floor(Math.random() * 9)]} />
         </ListItemAvatar>
         <ListItemText
-          primary="hi"
+          primary="Solid toilet seats"
           secondary={
             <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Ali Connors
-              </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {"The toilet seat shape was very comfortable. I had an overall positive experience"}
             </React.Fragment>
           }
         />
@@ -54,21 +42,13 @@ export default function BuildingBathroomList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="ADD TOILET NAME" src={avatarArray[Math.floor(Math.random() * 9)]} />
+          <Avatar alt="Random user 2" src={avatarArray[Math.floor(Math.random() * 9)]} />
         </ListItemAvatar>
         <ListItemText
-          primary="Summer BBQ"
+          primary="Not very clean..."
           secondary={
             <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                to Scott, Alex, Jennifer
-              </Typography>
-              {" — Wish I could come, but I'm out of town this…"}
+              {"I really go, but the toilets were not clean at all. Would not recommend."}
             </React.Fragment>
           }
         />
@@ -76,21 +56,13 @@ export default function BuildingBathroomList() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="ADD TOILET NAME" src={avatarArray[Math.floor(Math.random() * 9)]} />
+          <Avatar alt="Random user 3" src={avatarArray[Math.floor(Math.random() * 9)]} />
         </ListItemAvatar>
         <ListItemText
-          primary="Oui Oui"
+          primary="Auto-flush too sensitive D:<"
           secondary={
             <React.Fragment>
-              <Typography
-                sx={{ display: 'inline' }}
-                component="span"
-                variant="body2"
-                color="text.primary"
-              >
-                Sandra Adams
-              </Typography>
-              {' — Do you have Paris recommendations? Have you ever…'}
+              {"Unironically shit experience, the auto-flushing toilet is WAY too sensitive. I kept gettin my ass jump scared by that shit."}
             </React.Fragment>
           }
         />

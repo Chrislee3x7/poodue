@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import Toilet from './images/toilet-icon.jpg'
-import BuildingBathroomList from './BuildingBathroomList.js';
+import RandomCommentsList from './RandomCommentsList.js';
 
 export default function RatingPopup({id, averageRating = 3.6}) {
   const [open, setOpen] = React.useState(false);
@@ -34,17 +34,20 @@ export default function RatingPopup({id, averageRating = 3.6}) {
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
-          <Typography variant="h4" align="center">{buildingAbbreviation}</Typography>
+          <Typography sx={{ m: 1 }} variant="h4" align="center">{buildingAbbreviation}</Typography>
         </DialogTitle>
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <Box sx={{ mr: 1 }}>{averageRating}</Box>
           <Rating name="read-only" value={averageRating} precision={0.1} readOnly />
         </Box>
+        <Box sx={{display: 'flex', justifyContent: 'center', margin:1}}>
+          <Typography variant='p' align='center' sx={{display: 'flex', justifyContent: 'center'}}>Popularity: </Typography>
+        </Box>
         <DialogContent>
           <DialogContentText>
-            "Has slightly above average bathrooms."
+           <Typography variant='p' align='center' sx={{display: 'flex', justifyContent: 'center'}}>"Has slightly above average bathrooms."</Typography>
           </DialogContentText>
-          <BuildingBathroomList></BuildingBathroomList>
+          <RandomCommentsList></RandomCommentsList>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
