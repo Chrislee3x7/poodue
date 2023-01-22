@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 
 import './App.css';
 import styled from "styled-components";
+import { Box, BottomNavigation, BottomNavigationAction} from "@mui/material";
 
 export default function App() {
   const [isZoomed, setIsZoomed] = useState(false);
