@@ -25,6 +25,11 @@ export default function RatingPopup({id, averageRating = 3.6}) {
     setOpen(false);
   };
   
+  const handleSubmit = () => {
+      // send value (rating) here
+      // send comment here
+  };
+
   const buildingAbbreviation = id.toUpperCase();
 
   return (
@@ -34,7 +39,7 @@ export default function RatingPopup({id, averageRating = 3.6}) {
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
-          <Typography sx={{ m: 1 }} variant="h4" align="center">Rate: {buildingAbbreviation}</Typography>
+          <Typography sx={{ m: 1 }} variant="h4" align="center">Rate {buildingAbbreviation}</Typography>
         </DialogTitle>
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
           <Rating
@@ -61,8 +66,8 @@ export default function RatingPopup({id, averageRating = 3.6}) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
-          <Button onClick={handleClose}>Submit</Button>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>

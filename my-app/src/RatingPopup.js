@@ -31,7 +31,7 @@ export default function RatingPopup({id, averageRating = 3.6}) {
     <div>
       <Button class="toilet" id={id} onClick={handleClickOpen}>
         <img src={Toilet} alt="toilet"/>
-        <Typography variant="p" align="center" color="common.white">{averageRating}</Typography>
+        <Typography variant="p" textAlign="center">{averageRating}</Typography>
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>

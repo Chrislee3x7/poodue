@@ -17,7 +17,6 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 export default function App() {
   const [active, setActive] = useState("1C");
   const [value, setValue] = useState(0);
- 
 
   return (
     <div className='app'>
@@ -27,15 +26,16 @@ export default function App() {
       <Box id='flex-container' sx={{display: 'flex', flexDirection: "column"}}>
       <TransformWrapper height="100vh"
       initialScale={2}
-      minScale={2}
+      minScale={1}
       maxScale={2} 
       maxPositionX={null} 
       minPositionX={null} 
       maxPositionY={null} 
       minPositionY={null}
       limitToBounds={true}
-      pinch={{ diabled: true }}
-      centerZoomedOut={true}>
+      pinch={{ diabled: false }}
+      centerZoomedOut={true}
+      velocityAnimation={{disabled: true}}>
       <TransformComponent height="100vh">
       {active === "1C" && 
       <Box class="container">
