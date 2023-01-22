@@ -14,7 +14,7 @@ import Toilet from './images/toilet-icon.jpg'
 import RandomCommentsList from './RandomCommentsList.js';
 import AddRatingPopup from './AddRatingPopup';
 
-export default function RatingPopup({id, averageRating = 3.6}) {
+export default function RatingPopup({id, averageRating = Math.random() * 4 + 1}) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -31,15 +31,17 @@ export default function RatingPopup({id, averageRating = 3.6}) {
     <div>
       <Button class="toilet" id={id} onClick={handleClickOpen}>
         <img src={Toilet} alt="toilet"/>
-        <Typography variant="p" align="center" color="common.white">{averageRating}</Typography>
+        <Typography variant="p" textAlign="center">{Math.ceil(averageRating*10)/10}</Typography>
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
           <Typography sx={{ m: 1 }} variant="h4" align="center">{buildingAbbreviation}</Typography>
         </DialogTitle>
-        <Box sx={{display: 'flex', justifyContent: 'center'}}>
-          <Box sx={{ mr: 1 }}>{averageRating}</Box>
-          <Rating name="read-only" value={averageRating} precision={0.1} readOnly />
+        <Box sx={{display: 'flex', justifyContent: 'center', flexDirection: "row"}}>
+          <Box sx={{ mr: 1, mb: 1 }} size="40">
+            <Typography variant="h6" align="center">{Math.ceil(averageRating*10)/10}</Typography>
+          </Box>
+          <Rating name="read-only" value={averageRating} precision={0.1} size='large' readOnly />
         </Box>
         <Box sx={{display: 'flex', justifyContent: 'center', margin:1}}>
           <Typography variant='p' align='center' sx={{display: 'flex', justifyContent: 'center'}}>Popularity: </Typography>
