@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 
 import Toilet from './images/toilet-icon.jpg'
 
-export default function RatingPopup({id, averageRating = 3.6}) {
+export default function RatingPopup({id}) {
   const [open, setOpen] = React.useState(false);
 
   const [value, setValue] = React.useState(0);
