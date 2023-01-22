@@ -1,22 +1,21 @@
 import campusMap from './images/campusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
-
+import { BottomNavigation, BottomNavigationAction } from "@mui/material"
 import './App.css';
-import { MuiBottomNavigation } from './bottomNav.tsx';
+import StarIcon from "@mui/icons-material/Star"
+import HistoryIcon from '@mui/icons-material/History';
+import MapIcon from '@mui/icons-material/Map';
 import VirtualizedList from './scroller.tsx';
-import { MultiSelectUnstyled } from '@mui/base';
 
 export default function App() {
-  const [isZoomed, setIsZoomed] = useState(false);
+  const [active, setActive] = useState("1C");
+  const [value, setValue] = useState(0);
  
-  const toggleZoom = () => {
-    setIsZoomed(!isZoomed);
-  };
 
   return (
-    <div>
-      <div class="container">
+    <div className='app'>
+      {active === "1C" && <div class="container">
           <img src={campusMap} alt="campus"/>
           
           <RatingPopup id="frny"></RatingPopup>
@@ -64,9 +63,20 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
-        </div>
-        <VirtualizedList></VirtualizedList>
-        <MuiBottomNavigation></MuiBottomNavigation>
+        </div>}
+      {active === "2C" && <VirtualizedList></VirtualizedList>}
+      {active === "3C" && <VirtualizedList></VirtualizedList>}
+
+      <BottomNavigation sx={{ width: '100%' , position: 'fixed', bottom: 0}} value = {value} 
+        onChange={(event, newValue) => {
+            setValue(newValue)}}
+            showLabels
+            >
+            <BottomNavigationAction onClick={() => setActive("1C")}  label = 'Map' icon={<MapIcon/>}/>
+            <BottomNavigationAction onClick={() => setActive("2C")}  label = 'Top Rated' icon={<StarIcon/>}/>
+            <BottomNavigationAction onClick={() => setActive("3C")}  label = 'Recent' icon={<HistoryIcon/>}/>
+        </BottomNavigation>
+      
     </div>
   );
 }
