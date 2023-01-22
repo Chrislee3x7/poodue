@@ -1,18 +1,20 @@
 import { BottomNavigation, BottomNavigationAction } from "@mui/material"
 import React from 'react'
 import { useState } from "react"
-import HomeIcon from "@mui/icons-material/Home"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import PersonIcon from "@mui/icons-material/Person"
+import StarIcon from "@mui/icons-material/Star"
+import HistoryIcon from '@mui/icons-material/History';
+import MapIcon from '@mui/icons-material/Map';
 export const MuiBottomNavigation = () => {
     const [value, setValue] = useState(0);
     return (
-        <BottomNavigation sx={{width: '100%' , position: 'absolute', bottom: 0}} value = {value} 
+        <BottomNavigation sx={{ width: '100%' , position: 'fixed', bottom: 0}} value = {value} 
         onChange={(event, newValue) => {
-            setValue(newValue)}}>
-            <BottomNavigationAction label = 'home' icon={<HomeIcon/>}/>
-            <BottomNavigationAction label = 'favorite' icon={<FavoriteIcon/>}/>
-            <BottomNavigationAction label = 'person' icon={<PersonIcon/>}/>
+            setValue(newValue)}}
+            showLabels
+            >
+            <BottomNavigationAction label = 'Top Rated' icon={<StarIcon/>}/>
+            <BottomNavigationAction label = 'Map' icon={<MapIcon/>}/>
+            <BottomNavigationAction label = 'Recent' icon={<HistoryIcon/>}/>
         </BottomNavigation>
     )
 }

@@ -1,11 +1,8 @@
 import campusMap from './images/campusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
-import Toilet from './images/toilet-icon.jpg'
 
 import './App.css';
-import styled from "styled-components";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { MuiBottomNavigation } from './bottomNav.tsx';
 
 export default function App() {
@@ -16,7 +13,7 @@ export default function App() {
   };
 
   return (
-    <div>
+    <div sx={{display:'flex'}}>
       <div class="container">
           <img src={campusMap} alt="campus"/>
           
