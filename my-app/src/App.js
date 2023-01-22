@@ -9,6 +9,7 @@ import HistoryIcon from '@mui/icons-material/History';
 import MapIcon from '@mui/icons-material/Map';
 import VirtualizedList from './scroller.tsx';
 import AlignItemsList from './commentList';
+import PrimarySearchAppBar from './searchBar';
 
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
@@ -38,6 +39,7 @@ export default function App() {
       <TransformComponent height="100vh">
       {active === "1C" && 
       <Box class="container">
+          {/* <PrimarySearchAppBar></PrimarySearchAppBar> */}
           <img src={campusMap} alt="campus"/>
           
           <RatingPopup id="frny"></RatingPopup>
