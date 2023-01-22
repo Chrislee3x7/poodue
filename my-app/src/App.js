@@ -4,6 +4,8 @@ import RatingPopup from './RatingPopup'
 
 import './App.css';
 import { MuiBottomNavigation } from './bottomNav.tsx';
+import VirtualizedList from './scroller.tsx';
+import { MultiSelectUnstyled } from '@mui/base';
 
 export default function App() {
   const [isZoomed, setIsZoomed] = useState(false);
@@ -13,7 +15,7 @@ export default function App() {
   };
 
   return (
-    <div sx={{display:'flex'}}>
+    <div>
       <div class="container">
           <img src={campusMap} alt="campus"/>
           
@@ -35,7 +37,6 @@ export default function App() {
           <RatingPopup id="hamp"></RatingPopup>
           <RatingPopup id="walc"></RatingPopup>
           <RatingPopup id="arms"></RatingPopup>
-
           <RatingPopup id="ston"></RatingPopup>
           <RatingPopup id="univ"></RatingPopup>
           <RatingPopup id="schm"></RatingPopup>
@@ -64,6 +65,7 @@ export default function App() {
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
         </div>
+        <VirtualizedList></VirtualizedList>
         <MuiBottomNavigation></MuiBottomNavigation>
     </div>
   );
