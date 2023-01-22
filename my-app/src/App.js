@@ -9,6 +9,7 @@ import HistoryIcon from '@mui/icons-material/History';
 import MapIcon from '@mui/icons-material/Map';
 import VirtualizedList from './scroller.tsx';
 import AlignItemsList from './commentList';
+import PrimarySearchAppBar from './searchBar';
 
 export default function App() {
   const [active, setActive] = useState("1C");
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <div className='app'>
       {active === "1C" && <div class="container">
+          {/* <PrimarySearchAppBar></PrimarySearchAppBar> */}
           <img src={campusMap} alt="campus"/>
           
           <RatingPopup id="frny"></RatingPopup>
@@ -65,6 +67,7 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
+
         </div>}
       {active === "2C" && <VirtualizedList></VirtualizedList>}
       {active === "3C" && <AlignItemsList></AlignItemsList>}
