@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 
 import Toilet from './images/toilet-icon.jpg'
 import RandomCommentsList from './RandomCommentsList.js';
+import AddRatingPopup from './AddRatingPopup';
 
 export default function RatingPopup({id, averageRating = 3.6}) {
   const [open, setOpen] = React.useState(false);
@@ -50,7 +51,7 @@ export default function RatingPopup({id, averageRating = 3.6}) {
           <RandomCommentsList></RandomCommentsList>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <AddRatingPopup id={id} />
         </DialogActions>
       </Dialog>
     </div>

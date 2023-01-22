@@ -66,10 +66,8 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
-
         </div>
         <MuiBottomNavigation></MuiBottomNavigation>
     </div>
-        
   );
 }
