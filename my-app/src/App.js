@@ -8,6 +8,7 @@ import StarIcon from "@mui/icons-material/Star"
 import HistoryIcon from '@mui/icons-material/History';
 import MapIcon from '@mui/icons-material/Map';
 import VirtualizedList from './scroller.tsx';
+import AlignItemsList from './commentList';
 
 export default function App() {
   const [active, setActive] = useState("1C");
@@ -66,7 +67,7 @@ export default function App() {
           <RatingPopup id="mrrt"></RatingPopup>
         </div>}
       {active === "2C" && <VirtualizedList></VirtualizedList>}
-      {active === "3C" && <VirtualizedList></VirtualizedList>}
+      {active === "3C" && <AlignItemsList></AlignItemsList>}
 
       <BottomNavigation sx={{ width: '100%' , position: 'fixed', bottom: 0}} value = {value} 
         onChange={(event, newValue) => {
