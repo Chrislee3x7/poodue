@@ -15,7 +15,7 @@ import Toilet from './images/toilet-icon.jpg'
 export default function RatingPopup({id, averageRating = 3.6}) {
   const [open, setOpen] = React.useState(false);
 
-  const [value, setValue] = React.useState(2);
+  const [value, setValue] = React.useState(0);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -40,12 +40,10 @@ export default function RatingPopup({id, averageRating = 3.6}) {
           <Rating
             name="user-controlled-rating"
             value={value}
-            precision={0.5}
             onChange={(event, newValue) => {
                 setValue(newValue);
             }}
             />
-          <Box sx={{ ml: 1 }}>{value}</Box>
         </Box>
         <DialogContent>
           <DialogContentText>
@@ -53,7 +51,7 @@ export default function RatingPopup({id, averageRating = 3.6}) {
                 autoFocus
                 margin="dense"
                 id="name"
-                label="Add comment'"
+                label="Add comment"
                 type="text"
                 multiline
                 rows={3}
