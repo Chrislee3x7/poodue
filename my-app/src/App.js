@@ -6,7 +6,7 @@ import Toilet from './images/toilet-icon.jpg'
 import './App.css';
 // import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
 import styled from "styled-components";
-import { Button, IconButton } from "@mui/material";
+import { Box, BottomNavigation, BottomNavigationAction} from "@mui/material";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);

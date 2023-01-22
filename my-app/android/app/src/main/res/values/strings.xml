@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">poodue</string>
+    <string name="title_activity_main">poodue</string>
+    <string name="package_name">com.poodue.app</string>
+    <string name="custom_url_scheme">com.poodue.app</string>
+</resources>
