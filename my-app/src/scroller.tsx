@@ -24,11 +24,11 @@ function setWidthToZero() {
 export default function VirtualizedList() {
   return (
     <Box
-      sx={{ width: '100%', height: '100%', maxWidth: 360, position: 'absolute', top:0, bgcolor: 'background.paper' }}
+      sx={{ width: '100vw', height: 'auto', position: 'absolute', top:0, bgcolor: 'background.paper' }}
     >
       <FixedSizeList
         height={2640}
-        width={'100%'}
+        width={'100vw'}
         itemSize={60}
         itemCount={44}
         overscanCount={5}

@@ -2,7 +2,7 @@ import campusMap from './images/campusMap.png'
 import campusMap2 from './images/VectorStyleCampusMap.png'
 import React, { useState } from "react";
 import RatingPopup from './RatingPopup'
-import { BottomNavigation, BottomNavigationAction } from "@mui/material"
+import { BottomNavigation, BottomNavigationAction, Box, Typography } from "@mui/material"
 import './App.css';
 import StarIcon from "@mui/icons-material/Star"
 import HistoryIcon from '@mui/icons-material/History';
@@ -11,6 +11,9 @@ import VirtualizedList from './scroller.tsx';
 import AlignItemsList from './commentList';
 import PrimarySearchAppBar from './searchBar';
 
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+
 export default function App() {
   const [active, setActive] = useState("1C");
   const [value, setValue] = useState(0);
@@ -18,7 +21,24 @@ export default function App() {
 
   return (
     <div className='app'>
-      {active === "1C" && <div class="container">
+      <Box sx={{m: 2}}>
+        <Typography variant="h3" align="center">Poodue</Typography>
+      </Box>
+      <Box id='flex-container' sx={{display: 'flex', flexDirection: "column"}}>
+      <TransformWrapper height="100vh"
+      initialScale={2}
+      minScale={2}
+      maxScale={2} 
+      maxPositionX={null} 
+      minPositionX={null} 
+      maxPositionY={null} 
+      minPositionY={null}
+      limitToBounds={true}
+      pinch={{ diabled: true }}
+      centerZoomedOut={true}>
+      <TransformComponent height="100vh">
+      {active === "1C" && 
+      <Box class="container">
           {/* <PrimarySearchAppBar></PrimarySearchAppBar> */}
           <img src={campusMap} alt="campus"/>
           
@@ -67,12 +87,12 @@ export default function App() {
           <RatingPopup id="me"></RatingPopup>
           <RatingPopup id="bhee"></RatingPopup>
           <RatingPopup id="mrrt"></RatingPopup>
-
-        </div>}
+        </Box>}
+        </TransformComponent>
+      </TransformWrapper>
       {active === "2C" && <VirtualizedList></VirtualizedList>}
       {active === "3C" && <AlignItemsList></AlignItemsList>}
-
-      <BottomNavigation sx={{ width: '100%' , position: 'fixed', bottom: 0}} value = {value} 
+      <BottomNavigation sx={{ width: '100%', position: 'fixed', bottom: 0}} value = {value} 
         onChange={(event, newValue) => {
             setValue(newValue)}}
             showLabels
@@ -81,7 +101,7 @@ export default function App() {
             <BottomNavigationAction onClick={() => setActive("2C")}  label = 'Top Rated' icon={<StarIcon/>}/>
             <BottomNavigationAction onClick={() => setActive("3C")}  label = 'Recent' icon={<HistoryIcon/>}/>
         </BottomNavigation>
-      
+      </Box>
     </div>
   );
 }
