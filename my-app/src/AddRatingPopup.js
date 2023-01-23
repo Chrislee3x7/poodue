@@ -9,8 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
-import Toilet from './images/toilet-icon.jpg'
+import { useState } from 'react';
 
 export default function RatingPopup({id}) {
   const [open, setOpen] = React.useState(false);
@@ -25,9 +24,43 @@ export default function RatingPopup({id}) {
     setOpen(false);
   };
   
+
+
+  const [message, setMessage] = useState('');
+
+  const handleChange = event => {
+      setMessage(event.target.value);
+  }
+
+
   const handleSubmit = () => {
-      // send value (rating) here
-      // send comment here
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://441c-128-210-107-129.ngrok.io/reviewcreate");
+    xhr.setRequestHeader('ngrok-skip-browser-warning', '8080');
+    xhr.setRequestHeader('Content-Type', 'application/json')
+
+    const obj = {
+      location: id.toUpperCase(),
+      toiletRating: value,
+      sinkRating: value,
+      noiseRating: value,
+      comment: message
+      }
+    const body = JSON.stringify(obj);
+      console.log(body);
+
+      xhr.onload = () => {
+      var data = JSON.parse(xhr.responseText);
+      if (xhr.readyState == 4 && xhr.status == "200") {
+        console.log(data);
+      } else {
+        console.log(`Error: ${xhr.status}`);
+      }
+    };
+    xhr.send(body);
+
+      setOpen(false);
   };
 
   const buildingAbbreviation = id.toUpperCase();
@@ -63,6 +96,8 @@ export default function RatingPopup({id}) {
                 rows={1}
                 fullWidth
                 variant="standard"
+                onChange={handleChange}
+                value={message}
             />
           </DialogContentText>
         </DialogContent>

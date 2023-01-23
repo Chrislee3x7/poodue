@@ -31,7 +31,7 @@ export default function RatingPopup({id, averageRating = Math.random() * 4 + 1})
     <div>
       <Button class="toilet" id={id} onClick={handleClickOpen}>
         <img src={Toilet} alt="toilet"/>
-        <Typography variant="p" textAlign="center">{Math.ceil(averageRating*10)/10}</Typography>
+        {/* <Typography variant="p" textAlign="center" color={"white"} fontStyle="bold">{Math.ceil(averageRating*10)/10}</Typography> */}
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>

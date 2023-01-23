@@ -12,9 +12,9 @@ const Search = styled('div')(() => ({
   '&:hover': {
     backgroundColor: alpha("#CEB888", 0.55),
   },
-  marginRight: 0,
-  marginLeft: 0,
-  width: '100%',
+  marginRight: 5,
+  marginLeft: 5,
+  width: 'auto',
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -40,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
   return (
-    <Box sx={{ flexGrow: 1, boxShadow:3}}>
+    <Box sx={{ flexGrow: 1}}>
         <Search>
         <SearchIconWrapper>
             <SearchIcon />

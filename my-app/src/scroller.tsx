@@ -8,10 +8,91 @@ import { FixedSizeList, ListChildComponentProps } from 'react-window';
 function renderRow(props: ListChildComponentProps) {
   const { index, style } = props;
 
+ const names = ["frny", "pgnw", "wang",
+  
+  "hovd",
+  
+  "ellt",
+  
+  "haas",
+  
+  "lwsn",
+  
+  "ar",
+  
+  "chas",
+  "dscb",
+  
+  "jnsn", 
+  "msee", 
+  
+  "phys", 
+  
+  "rhph",
+  
+  "push",
+  
+  "hamp" ,
+  
+  "arms" ,
+  
+  "walc" ,
+  
+  "ston" ,
+  
+  "univ",
+  
+  "schm" ,
+  
+  "mthw" ,
+  
+  "brng" ,
+  
+  "math" ,
+  "cl50" ,
+  
+  "prce",
+  
+  "psyc" ,
+  
+  "sc" ,
+  
+  "wthr" ,
+  
+  "brwn" ,
+  
+  "heav" ,
+  
+  "stew" ,
+  "hiks" ,
+  
+  "pmu" ,
+  
+  "pmuc" ,
+  
+  "gris" ,
+  
+  "uc" ,
+  
+  "baly" ,
+  
+  "dudl" ,
+  "lmbs" ,
+  
+  "knoy" ,
+  
+  "potr",
+  
+  "me",
+  
+  "bhee" ,
+  
+  "mrrt"];
+
   return (
     <ListItem style={style} key={index} component="div" disablePadding>
       <ListItemButton>
-        <ListItemText primary={`Item ${index + 1}`} />
+        <ListItemText primary={`${index + 1} : ${names[index].toUpperCase()}`} />
       </ListItemButton>
     </ListItem>
   );
